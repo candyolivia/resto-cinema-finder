@@ -16,4 +16,4 @@ class MovieNameFinder():
 
 if __name__ == '__main__':
 	mf = MovieNameFinder()
-	print mf.get_movie_name("mau nonton beauty and the beast")
+	print mf.get_movie_name("nama saya devin")
