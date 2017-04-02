@@ -22,7 +22,7 @@ def get_reply():
 		location = get_location(message)
 		restaurant_name = rf.get_restaurant_name(message, location)
 
-		if not restaurant_name:
+		if not restaurant_name and not location:
 			reply = {"code": 3}
 		else:
 			reply = {"code": 1, "name": restaurant_name, "location": location}	
