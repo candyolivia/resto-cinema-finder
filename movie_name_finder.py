@@ -1,5 +1,5 @@
 from similarity_finder import SimilarityFinder
-import MySQLdb, json
+import json
 
 class MovieNameFinder():
 	def __init__(self):
