@@ -35,7 +35,8 @@ class SimilarityFinder:
 					if maximum < self.similar(str, firstWord):
 						maximum = self.similar(str, firstWord)
 						max_idx = i
-			if maximum > 0.5:
+						
+			if maximum > 0.45:
 				res = self.items[max_idx]
 
 		return res
