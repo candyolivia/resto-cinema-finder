@@ -36,17 +36,17 @@ class MovieNameFinder():
 		return result
 
 	def get_movie_name(self, text):
-		# return self.sf.findMostSimilarItem(text)
-		regex = re.compile('[^a-zA-Z0-9]')
-		text = regex.sub(' ', text.lower())
+		return self.sf.findMostSimilarItem(text)
+		# regex = re.compile('[^a-zA-Z0-9]')
+		# text = regex.sub(' ', text.lower())
 
-		movie_name = ""
-		for movie in self.movie_list:
-			substrings = self.generate_skip_n_grams(movie.lower())
-			if any(substring in text for substring in substrings):
-				movie_name = movie
+		# movie_name = ""
+		# for movie in self.movie_list:
+		# 	substrings = self.generate_skip_n_grams(movie.lower())
+		# 	if any(substring in text for substring in substrings):
+		# 		movie_name = movie
 					
-		return movie_name
+		# return movie_name
 
 
 if __name__ == '__main__':

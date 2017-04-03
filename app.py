@@ -21,14 +21,17 @@ def get_reply():
 	location = get_location(message)
 	restaurant_name = rf.get_restaurant_name(message, location)
 
-	if not restaurant_name and not location:
-		movie_name = mf.get_movie_name(message)
-		if not movie_name:
-			reply = {"code": 3}
-		else:
-			reply = {"code": 2, "name": movie_name}
-	else:
+	if restaurant_name or location:
 		reply = {"code": 1, "name": restaurant_name, "location": location}	
+
+	else:
+		movie_name = mf.get_movie_name(message)
+		if movie_name:
+			reply = {"code": 2, "name": movie_name}
+		else:
+			reply = {"code": 3}
+		
+		
 
 	result = {'reply': reply}
 	return jsonify(result)
