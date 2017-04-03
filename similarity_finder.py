@@ -35,7 +35,7 @@ class SimilarityFinder:
 					if maximum < self.similar(str, firstWord):
 						maximum = self.similar(str, firstWord)
 						max_idx = i
-			if maximum > 0.4:
+			if maximum > 0.5:
 				res = self.items[max_idx]
 
 		return res
@@ -46,4 +46,4 @@ if __name__ == '__main__':
 
 	sf = SimilarityFinder(titles)
 
-	print sf.findMostSimilarItem("mau nonton Beauty and the beast")
+	print sf.findMostSimilarItem("mau makan nih")
