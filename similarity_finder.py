@@ -15,7 +15,7 @@ class SimilarityFinder:
 		res = ""
 		for item in self.items:
 			item = item.replace("\n","")
-			if str.find(item) != -1:
+			if str.find(item.lower()) != -1:
 				res = item
 				found = 1
 				break
@@ -36,7 +36,7 @@ class SimilarityFinder:
 						maximum = self.similar(str, firstWord)
 						max_idx = i
 						
-			if maximum > 0.5:
+			if maximum > 0.45:
 				res = self.items[max_idx]
 
 		return res
