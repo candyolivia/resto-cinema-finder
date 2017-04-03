@@ -4,7 +4,7 @@ class RestaurantNameFinder():
 	def __init__(self):
 		self.my_dir = os.path.dirname(__file__)
 		self.verbs = [line.rstrip() for line in open(os.path.join(self.my_dir, 'verb_list.txt'))]
-		self.prepositions = ["di", "ke"]
+		self.prepositions = [" di ", " ke ", " d ", " k "]
 
 	def find_between(self, s, first, last):
 		try:
@@ -20,7 +20,7 @@ class RestaurantNameFinder():
 			for preposition in self.prepositions:
 				if preposition in text:
 					if not location:
-						restaurant_name = text.split(preposition, 1)[1][+1:]
+						restaurant_name = text.split(preposition, 1)[1]
 					else:
-						restaurant_name = self.find_between(text, preposition, location)[+1:]
+						restaurant_name = self.find_between(text, preposition, location)
 		return restaurant_name
